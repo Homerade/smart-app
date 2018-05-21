@@ -14,7 +14,10 @@ componentDidMount() {
         .then(response => {
             let data = response.data.map(each => {
                 return (
-                    <li key={each.name}>{each}</li>
+                    <ul>
+                        <li key={each.name}>{each.name}</li>
+                        <li key={each.length}>{each.length}</li>
+                    </ul>    
                 )
             })
             this.setState({ battleships: data });
@@ -27,7 +30,7 @@ componentDidMount() {
 
 render () {
     // console.log(this.state);
-    return <div>{this.state.battleships}</div>
+    return <ul>{this.state.battleships}</ul>
 }    
 
-}
+}  
