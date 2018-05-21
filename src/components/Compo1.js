@@ -12,7 +12,7 @@ export default class Compo1 extends React.Component {
 componentDidMount() {
     axios.get('https://sl-battle-api.herokuapp.com/ships')
         .then(response => {
-            let data = response.data.map(each => {
+            let data = response.map(each => {
                 return (
                     <ul>
                         <li key={each.name}>{each.name}</li>
